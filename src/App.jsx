@@ -127,8 +127,8 @@ Ensure that the contract includes all necessary safety checks and is optimized f
               />
               <button
                 onClick={handleGenerateContract}
-                class={`w-full px-6 py-3 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition duration-300 ease-in-out transform hover:scale-105 cursor-pointer ${
-                  loading() ? 'opacity-50 cursor-not-allowed' : ''
+                class={`w-full px-6 py-3 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition duration-300 ease-in-out transform hover:scale-105 ${
+                  loading() ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'
                 }`}
                 disabled={loading()}
               >

@@ -14,7 +14,7 @@
     "@zapt/zapt-js": "^1.0.5",
     "solid-js": "^1.8.22",
     "solid-markdown": "^2.0.13",
-    "@sentry/browser": "^7.64.0"
+    "@sentry/browser": "^8.35.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
