@@ -1,4 +1,3 @@
-```js
 import { defineConfig } from 'vite';
 import solidPlugin from 'vite-plugin-solid';
 
@@ -15,4 +14,3 @@ export default defineConfig({
     exclude: [], // Add any server-only dependencies here
   },
 });
-```

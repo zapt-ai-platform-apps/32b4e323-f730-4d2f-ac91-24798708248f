@@ -1,4 +1,3 @@
-```jsx
 import { createSignal, onMount, createEffect, Show } from 'solid-js';
 import { createEvent, supabase } from './supabaseClient';
 import { Auth } from '@supabase/auth-ui-solid';
@@ -24,7 +23,7 @@ function App() {
   onMount(checkUserSignedIn);
 
   createEffect(() => {
-    const { data: authListener } = supabase.auth.onAuthStateChange((_, session) => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_, session) => {
       if (session?.user) {
         setUser(session.user);
         setCurrentPage('homePage');
@@ -35,7 +34,7 @@ function App() {
     });
 
     return () => {
-      authListener.unsubscribe();
+      subscription.unsubscribe();
     };
   });
 
@@ -118,13 +117,13 @@ Ensure that the contract includes all necessary safety checks and is optimized f
                 placeholder="Enter Token Pair Info"
                 value={tokenPairInfo()}
                 onInput={(e) => setTokenPairInfo(e.target.value)}
-                class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-transparent box-border h-24"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-transparent box-border h-24 text-gray-800"
               />
               <textarea
                 placeholder="Enter Trade Route Instructions"
                 value={tradeRouteInstructions()}
                 onInput={(e) => setTradeRouteInstructions(e.target.value)}
-                class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-transparent box-border h-24"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-transparent box-border h-24 text-gray-800"
               />
               <button
                 onClick={handleGenerateContract}
@@ -158,4 +157,3 @@ Ensure that the contract includes all necessary safety checks and is optimized f
 }
 
 export default App;
-```
